@@ -211,4 +211,4 @@ pub fn get_diamond(c: char) -> Vec<String> {
 }
 ```
 
-* Last, I actually still trying to find the simplest way to substitute the clone and pop in the last, but I cant find anything like it.  :(
+Thank You! 😀
