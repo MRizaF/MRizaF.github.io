@@ -1,5 +1,6 @@
 Mohammad Riza Farhandhy - 1313617038
 ======
+
 Essay 'Operating System' Assignment 2
 ------
 
@@ -15,7 +16,7 @@ I finish 5 medium problems :
 And I choose to explain "Diamond" problem.
 
 <p align="center">
-<img src="https://github.com/MRizaF/OS_A2/blob/image/Diamond-Exercism.PNG" alt="Diamond Exercism"/>
+<img src="https://github.com/MRizaF/MRizaF.github.io/blob/images/Diamond-Exercism.PNG" alt="Diamond Exercism"/>
 </p>
 
 Why I choose this problem?
@@ -23,7 +24,7 @@ Why I choose this problem?
 * First, because **this problem has the fewest community solutions** from 5 problems that I finish. It has only **39 community solutions**, while the others have at least **200 community solutions**.
 
 <p align="center">
-<img src="https://github.com/MRizaF/OS_A2/blob/image/Diamond-Community-Solutions.PNG" alt="Diamond Community Solutions"/></br>
+<img src="https://github.com/MRizaF/MRizaF.github.io/blob/images/Diamond-Community-Solutions.PNG" alt="Diamond Community Solutions"/></br>
 (17 April 2019)
 </p>
 
@@ -210,3 +211,5 @@ pub fn get_diamond(c: char) -> Vec<String> {
     return alphabet
 }
 ```
+
+* Last, I actually still trying to find the simplest way to substitute the clone and pop in the last, but I cant find anything near it. :(
