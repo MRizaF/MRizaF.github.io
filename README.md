@@ -15,6 +15,8 @@ I finish 5 medium problems :
 
 And I choose to explain "Diamond" problem.
 
+![alt text](https://github.com/MRizaF/MRizaF.github.io/blob/images/Diamond-Exercism.PNG)
+
 <p align="center">
 <img src="https://github.com/MRizaF/MRizaF.github.io/blob/images/Diamond-Exercism.PNG" alt="Diamond Exercism"/>
 </p>
