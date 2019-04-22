@@ -1,7 +1,7 @@
-Mohammad Riza Farhandhy - 1313617038
+Essay 'Operating System' Assignment 2
 ======
 
-Essay 'Operating System' Assignment 2
+Mohammad Riza Farhandhy - 1313617038
 ------
 
 In here, I will explain how I finish one `Exercism` problem that use `Rust` with medium difficulty.
@@ -15,10 +15,6 @@ I finish 5 medium problems :
 
 And I choose to explain "Diamond" problem.
 
-![alt text]({{https://MRizaF.github.io}}/images/Diamond-Exercism.PNG)
-
-![alt text]({{https://MRizaF.github.io}}/images/Diamond-Exercism.PNG)
-
 <p align="center">
 <img src="https://github.com/MRizaF/MRizaF.github.io/blob/images/Diamond-Exercism.PNG" alt="Diamond Exercism"/>
 </p>
@@ -28,7 +24,7 @@ Why I choose this problem?
 * First, because **this problem has the fewest community solutions** from 5 problems that I finish. It has only **39 community solutions**, while the others have at least **200 community solutions**.
 
 <p align="center">
-<img src="https://github.com/MRizaF/MRizaF.github.io/blob/images/Diamond-Community-Solutions.PNG" alt="Diamond Community Solutions"/></br>
+<img src="https://github.com/MRizaF/MRizaF.github.io/blob/images/Diamond-Community-Solutions.PNG" alt="Diamond Community Solutions"/>
 (17 April 2019)
 </p>
 
