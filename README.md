@@ -24,8 +24,7 @@ Why I choose this problem?
 * First, because **this problem has the fewest community solutions** from 5 problems that I finish. It has only **39 community solutions**, while the others have at least **200 community solutions**.
 
 <p align="center">
-<img src="https://github.com/MRizaF/MRizaF.github.io/blob/images/Diamond-Community-Solutions.PNG" alt="Diamond Community Solutions"/>
-(17 April 2019)
+<img src="https://github.com/MRizaF/MRizaF.github.io/blob/images/Diamond-Community-Solutions.PNG" alt="Diamond Community Solutions (17 April 2019)"/>
 </p>
 
 * Second, I just like it and I hope no one from Tier 2 will choose this too.
