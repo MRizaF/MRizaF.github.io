@@ -49,10 +49,10 @@ pub fn get_diamond(c: char) -> Vec<String> {
 }
 ```
 
-Now lets start build some code. What I wanna do first is to generate alphabet, like the first summary.
+Now lets start build some code. What I wanna do first is to generate alphabet, like in the first summary.
 * Input [char] = a letter, Output [Vec< String >] = ('A' -> Input), form a diamond shape.
 
-*Because I still dont know a lot about Rust, I search it in google "how to generate alphabet in rust". And I found this https://stackoverflow.com/questions/45343345/is-there-a-simple-way-to-generate-the-lowercase-and-uppercase-english-alphabet-i.
+*Because I still dont know a lot about Rust, I search it in google "how to generate alphabet in rust". And I found this <https://stackoverflow.com/questions/45343345/is-there-a-simple-way-to-generate-the-lowercase-and-uppercase-english-alphabet-i.>
 
 ```rust
 let alphabet = (b'A'..=b'z')                               // Start as u8
@@ -151,7 +151,7 @@ Ok, what happen in the new code is :
 Now, the problem is solved and the code will surely pass without error.  :)
 
 ---
-### Bonus part
+### Extra part
 
 * The code that I explain and post before, is actually not my very first code that I create and submit for the first time in Exercism. The first code is a little complicated than before... But, yeah I will just post this down for self reminder.  :)
 
@@ -211,4 +211,4 @@ pub fn get_diamond(c: char) -> Vec<String> {
 }
 ```
 
-* Last, I actually still trying to find the simplest way to substitute the clone and pop in the last, but I cant find anything near it.  :(
+* Last, I actually still trying to find the simplest way to substitute the clone and pop in the last, but I cant find anything like it.  :(
