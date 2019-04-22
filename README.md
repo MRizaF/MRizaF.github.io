@@ -16,6 +16,7 @@ I finish 5 medium problems :
 And I choose to explain "Diamond" problem.
 
 <p align="center">
+<img src="https://github.com/MRizaF/MRizaF.github.io/blob/master/Diamond-Community-Solutions.PNG" alt="Diamond Exercism"/>
 <img src="https://github.com/MRizaF/MRizaF.github.io/blob/images/Diamond-Exercism.PNG" alt="Diamond Exercism"/>
 </p>
 
