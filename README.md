@@ -7,11 +7,11 @@ Mohammad Riza Farhandhy - 1313617038
 In here, I will explain how I finish one `Exercism` problem that use `Rust` with medium difficulty.
 
 I finish 5 medium problems :
-* Clock
-* ISBN Verifier
-* Roman Numerals
-* Luhn
-* Diamond
+* [Clock](https://exercism.io/tracks/rust/exercises/clock/solutions/20d52310c6a44f929759c5846278f18e)
+* [ISBN Verifier](https://exercism.io/tracks/rust/exercises/isbn-verifier/solutions/6cd2dd2ec553420ea64ee1bcb09ee10a)
+* [Roman Numerals](https://exercism.io/tracks/rust/exercises/roman-numerals/solutions/c7b74b766d7044abb0614683b9c5637f)
+* [Luhn](https://exercism.io/tracks/rust/exercises/luhn/solutions/fcf3996676c14b6ea966cf4e211eaf98)
+* [Diamond](https://exercism.io/tracks/rust/exercises/diamond/solutions/7d8c3e699a8d47edb12b18dd0ca3e4a9)
 
 And I choose to explain "Diamond" problem.
 
@@ -67,15 +67,15 @@ That code will generate 'A' until 'z' to vec. We need to modify it a bit, so it 
 
 ```rust
 pub fn get_diamond(c: char) -> Vec<String> {
-  let mut alphabet = (b'A'..=c as u8)
-    .filter_map(|x| {
-      let x = x as char;
-      if x.is_alphabetic() {
-        if x == 'A' { Some(format!("{1}{0}{1}", x, 1)) }
-        else { Some(format!("{1}{0}{2}{0}{1}", x, 1, 2)) }
-        } else { None }
-      }
-    ).collect::<Vec<_>>();
+	let mut alphabet = (b'A'..=c as u8)
+		.filter_map(|x| {
+			let x = x as char;
+			if x.is_alphabetic() {
+				if x == 'A' { Some(format!("{1}{0}{1}", x, 1)) }
+				else { Some(format!("{1}{0}{2}{0}{1}", x, 1, 2)) }
+			} else { None }
+		})
+		.collect::<Vec<_>>();
 }
 ```
 
@@ -87,22 +87,22 @@ Now we need to replace the number in the vec with trailing spaces. Lets add some
 
 ```rust
 pub fn get_diamond(c: char) -> Vec<String> {
-  let mut alphabet = (b'A'..=c as u8)
-    .filter_map(|x| {
-      let x = x as char;
-      if x.is_alphabetic() {
-        if x == 'A' { Some(format!("{1}{0}{1}", x, 1)) }
-        else { Some(format!("{1}{0}{2}{0}{1}", x, 1, 2)) }
-        } else { None }
-      }
-    ).collect::<Vec<_>>();
+	let mut alphabet = (b'A'..=c as u8)
+		.filter_map(|x| {
+			let x = x as char;
+			if x.is_alphabetic() {
+				if x == 'A' { Some(format!("{1}{0}{1}", x, 1)) }
+				else { Some(format!("{1}{0}{2}{0}{1}", x, 1, 2)) }
+			} else { None }
+		})
+		.collect::<Vec<_>>();
 
-  let l = alphabet.len();
+	let l = alphabet.len();
 
-  for i in 0..l {
-    alphabet[i] = alphabet[i].replace("1", &" ".repeat(l-(i+1)));
-    if i != 0 {alphabet[i] = alphabet[i].replace("2", &" ".repeat(i+i-1));}
-  }
+	for i in 0..l {
+		alphabet[i] = alphabet[i].replace("1", &" ".repeat(l-(i+1)));
+		if i != 0 {alphabet[i] = alphabet[i].replace("2", &" ".repeat(i+i-1));}
+	}
 }
 ```
 
@@ -117,28 +117,28 @@ Well, the bottom half is basically the same as the top half just in different or
 *Finished Code
 ```rust
 pub fn get_diamond(c: char) -> Vec<String> {
-  let mut alphabet = (b'A'..=c as u8)
-    .filter_map(|x| {
-      let x = x as char;
-      if x.is_alphabetic() {
-        if x == 'A' { Some(format!("{1}{0}{1}", x, 1)) }
-        else { Some(format!("{1}{0}{2}{0}{1}", x, 1, 2)) }
-        } else { None }
-      }
-    ).collect::<Vec<_>>();
+	let mut alphabet = (b'A'..=c as u8)
+		.filter_map(|x| {
+			let x = x as char;
+			if x.is_alphabetic() {
+				if x == 'A' { Some(format!("{1}{0}{1}", x, 1)) }
+				else { Some(format!("{1}{0}{2}{0}{1}", x, 1, 2)) }
+			} else { None }
+		})
+		.collect::<Vec<_>>();
 
-  let l = alphabet.len();
+	let l = alphabet.len();
 
-  for i in 0..l {
-    alphabet[i] = alphabet[i].replace("1", &" ".repeat(l-(i+1)));
-    if i != 0 {alphabet[i] = alphabet[i].replace("2", &" ".repeat(i+i-1));}
-  }
+	for i in 0..l {
+		alphabet[i] = alphabet[i].replace("1", &" ".repeat(l-(i+1)));
+		if i != 0 {alphabet[i] = alphabet[i].replace("2", &" ".repeat(i+i-1));}
+	}
   
-  let mut alp = alphabet.clone();
-  alp.pop();
-  while !alp.is_empty() {alphabet.push(alp.pop().unwrap());}
-
-  return alphabet
+	let mut alp = alphabet.clone();
+	alp.pop();
+	while !alp.is_empty() {alphabet.push(alp.pop().unwrap());}
+	
+	return alphabet
 }
 ```
 
@@ -148,7 +148,7 @@ Ok, what happen in the new code is :
 * after that, we will push the last value of vec alp to vec alphabet, until vec alp is empty.
 * last, we will return vec alphabet who contains the diamond value = [··A··, ·B·B·, C···C, ·B·B·, ··A··].
 
-Now, the problem is solved and the code will surely pass without error.  :)
+Now, the problem is solved and the code will surely pass without error. 😀
 
 ---
 ### Extra part
@@ -192,6 +192,7 @@ pub fn get_diamond(c: char) -> Vec<String> {
 pub fn get_diamond(c: char) -> Vec<String> {
     let l = (((c as u8)-b'A'+1)) as usize;
     
+    //https://stackoverflow.com/questions/45343345/is-there-a-simple-way-to-generate-the-lowercase-and-uppercase-english-alphabet-i
     let mut alphabet = (b'A'..=c as u8)
         .filter_map(|x| {
             let n = (x-b'A') as usize;
