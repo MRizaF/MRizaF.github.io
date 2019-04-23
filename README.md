@@ -4,9 +4,11 @@ Essay 'Operating System' Assignment 2
 Mohammad Riza Farhandhy - 1313617038
 ------
 
+Hello World! 😀
+
 In here, I will explain how I finish one `Exercism` problem that use `Rust` with medium difficulty.
 
-I finish 5 medium problems :
+I had finished 5 medium problems :
 * [Clock](https://exercism.io/tracks/rust/exercises/clock/solutions/20d52310c6a44f929759c5846278f18e)
 * [ISBN Verifier](https://exercism.io/tracks/rust/exercises/isbn-verifier/solutions/6cd2dd2ec553420ea64ee1bcb09ee10a)
 * [Roman Numerals](https://exercism.io/tracks/rust/exercises/roman-numerals/solutions/c7b74b766d7044abb0614683b9c5637f)
@@ -49,8 +51,7 @@ pub fn get_diamond(c: char) -> Vec<String> {
 }
 ```
 
-Now lets start build some code. What I wanna do first is to generate alphabet, like in the first summary.
-* Input [char] = a letter, Output [Vec< String >] = ('A' -> Input), form a diamond shape.
+Now lets start build some code. What I wanna do first is to generate alphabet.
 
 *Because I still dont know a lot about Rust, I search it in google "how to generate alphabet in rust". And I found this <https://stackoverflow.com/questions/45343345/is-there-a-simple-way-to-generate-the-lowercase-and-uppercase-english-alphabet-i.>
 
