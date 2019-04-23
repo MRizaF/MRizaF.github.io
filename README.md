@@ -47,7 +47,7 @@ What I do first, is to learn anything that I can get from the instruction, examp
 *First look in the lib file.
 ```rust
 pub fn get_diamond(c: char) -> Vec<String> {
-  unimplemented!();
+	unimplemented!();
 }
 ```
 
@@ -56,12 +56,12 @@ Now lets start build some code. What I wanna do first is to generate alphabet.
 *Because I still dont know a lot about Rust, I search it in google "how to generate alphabet in rust". And I found this <https://stackoverflow.com/questions/45343345/is-there-a-simple-way-to-generate-the-lowercase-and-uppercase-english-alphabet-i.>
 
 ```rust
-let alphabet = (b'A'..=b'z')                               // Start as u8
-        .filter_map(|c| {
-            let c = c as char;                             // Convert to char
-            if c.is_alphabetic() { Some(c) } else { None } // Filter only alphabetic chars
-        })          
-        .collect::<Vec<_>>();
+let alphabet = (b'A'..=b'z')                       // Start as u8
+	.filter_map(|c| {
+		let c = c as char;                             // Convert to char
+		if c.is_alphabetic() { Some(c) } else { None } // Filter only alphabetic chars
+	})          
+	.collect::<Vec<_>>();
 ```
 
 That code will generate 'A' until 'z' to vec. We need to modify it a bit, so it can fit our problem.
@@ -158,58 +158,59 @@ Now, the problem is solved and the code will surely pass without error. 😀
 
 ``` rust
 pub fn get_diamond(c: char) -> Vec<String> {
-    //https://stackoverflow.com/questions/45343345/is-there-a-simple-way-to-generate-the-lowercase-and-uppercase-english-alphabet-i
-    let mut alphabet = (b'A'..=c as u8)
-        .filter_map(|x| {
-            let s = 1;
-            let x = x as char;
-            if x.is_alphabetic() {
-                if x == 'A' {Some(format!("{0}{1}{0}", s, x))}
-                else {Some(format!("{0}{1}{2}{1}{0}", s+1, x, s+2))}
-            } else { None }
-        })          
-        .collect::<Vec<_>>();
-        
-    let l = alphabet.len();
-    
-    for i in 0..l {
-        let mut t: String = alphabet.remove(0);
-        t = t.replace("1", &" ".repeat(l-1));
-        t = t.replace("2", &" ".repeat(l-(i+1)));
-        if i != 0 {t = t.replace("3", &" ".repeat(i+i-1));}
-        alphabet.push(t);
-    }
-        
-    let mut alp = alphabet.clone();
-    alp.pop();
-    for _i in 1..l {alphabet.push(alp.pop().unwrap());}
+	//https://stackoverflow.com/questions/45343345/is-there-a-simple-way-to-generate-the-lowercase-and-uppercase-english-alphabet-i
+	let mut alphabet = (b'A'..=c as u8)
+		.filter_map(|x| {
+			let s = 1;
+			let x = x as char;
+			if x.is_alphabetic() {
+				if x == 'A' {Some(format!("{0}{1}{0}", s, x))}
+				else {Some(format!("{0}{1}{2}{1}{0}", s+1, x, s+2))}
+			} else { None }
+		})          
+		.collect::<Vec<_>>();
 
-    alphabet
+	let l = alphabet.len();
+
+	for i in 0..l {
+		let mut t: String = alphabet.remove(0);
+		t = t.replace("1", &" ".repeat(l-1));
+		t = t.replace("2", &" ".repeat(l-(i+1)));
+		if i != 0 {t = t.replace("3", &" ".repeat(i+i-1));}
+		alphabet.push(t);
+	}
+
+	let mut alp = alphabet.clone();
+	alp.pop();
+	for _i in 1..l {alphabet.push(alp.pop().unwrap());}
+
+	alphabet
+}
 ```
 
 * And, when I review this and see *Why not add the trailing spaces directly?*, I get curious and try to find it again, then somehow found it. This a little simpler and just have 2 iteration i guess.
 
 ```rust
 pub fn get_diamond(c: char) -> Vec<String> {
-    let l = (((c as u8)-b'A'+1)) as usize;
-    
-    //https://stackoverflow.com/questions/45343345/is-there-a-simple-way-to-generate-the-lowercase-and-uppercase-english-alphabet-i
-    let mut alphabet = (b'A'..=c as u8)
-        .filter_map(|x| {
-            let n = (x-b'A') as usize;
-            let x = x as char;
-            if x.is_alphabetic() {
-                if x == 'A' { Some(format!("{1}{0}{1}", x, &" ".repeat(l-(n+1)))) }
-                else { Some(format!("{1}{0}{2}{0}{1}", x, &" ".repeat(l-(n+1)), &" ".repeat(n+n-1))) }
-            } else { None }
-            }
-        ).collect::<Vec<_>>();  
-        
-    let mut alp = alphabet.clone();
-    alp.pop();
-    while !alp.is_empty() {alphabet.push(alp.pop().unwrap());}
-    
-    return alphabet
+	let l = (((c as u8)-b'A'+1)) as usize;
+
+	//https://stackoverflow.com/questions/45343345/is-there-a-simple-way-to-generate-the-lowercase-and-uppercase-english-alphabet-i
+	let mut alphabet = (b'A'..=c as u8)
+		.filter_map(|x| {
+			let i = (x-b'A') as usize;
+			let x = x as char;
+			if x.is_alphabetic() {
+				if x == 'A' { Some(format!("{1}{0}{1}", x, &" ".repeat(l-(i+1)))) }
+				else { Some(format!("{1}{0}{2}{0}{1}", x, &" ".repeat(l-(i+1)), &" ".repeat(i+i-1))) }
+			} else { None }
+		})
+		.collect::<Vec<_>>();
+
+	let mut alp = alphabet.clone();
+	alp.pop();
+	while !alp.is_empty() {alphabet.push(alp.pop().unwrap());}
+
+	return alphabet
 }
 ```
 
