@@ -34,7 +34,8 @@ Why I choose this problem?
 Ok, lets solve this problem!
 
 ---
-### My step to solve this problem
+## My step to solve this problem
+### Summary of the problem
 
 What I do first, is to learn anything that I can get from the instruction, example, and test file. The summary I got :
 * Input [char] = a letter, Output [Vec< String >] = ('A' -> Input), form a diamond shape.
@@ -51,7 +52,9 @@ pub fn get_diamond(c: char) -> Vec<String> {
 }
 ```
 
-Now lets start build some code. What I wanna do first is to generate alphabet.
+### Generate alphabet
+
+Now lets start build some code. What I wanna do next is to generate alphabet.
 
 *Because I still dont know a lot about Rust, I search it in google "how to generate alphabet in rust". And I found this <https://stackoverflow.com/questions/45343345/is-there-a-simple-way-to-generate-the-lowercase-and-uppercase-english-alphabet-i.>
 
@@ -84,6 +87,8 @@ The new code will generate = [1A1, 1B2B1, 1C2C1, ...until input c]. The number w
 
 *Why not add the trailing spaces directly? well, because I dont know how to get the length of the vec while we create it, so I just use number 1 for outer trailing spaces and number 2 for inner trailing spaces.
 
+### Generate trailing spaces
+
 Now we need to replace the number in the vec with trailing spaces. Lets add some code to modify the vec.
 
 ```rust
@@ -110,6 +115,8 @@ pub fn get_diamond(c: char) -> Vec<String> {
 The new code will replace the number in the vec with trailing spaces, with conditions :
 * Number 1 (Outer spaces), from the first row, the number of spaces will be the same as the vec.length-1 and keep reduce by 1 for the next row until the end of the vec.
 * Number 2 (Inner spaces), after the first row, the number of spaces resemble odd number (1, 3, 5, ..).
+
+### Generate bottom half diamond
 
 Now we already have the top half diamond, how about the bottom half?
 
@@ -144,10 +151,10 @@ pub fn get_diamond(c: char) -> Vec<String> {
 ```
 
 Ok, what happen in the new code is :
-* if vec alphabet = [··A··, ·B·B·, C···C].
-* then, we clone it to vec alp and pop the last value, vec alp = [··A··, ·B·B·].
-* after that, we will push the last value of vec alp to vec alphabet, until vec alp is empty.
-* last, we will return vec alphabet who contains the diamond value = [··A··, ·B·B·, C···C, ·B·B·, ··A··].
+* If vec alphabet = [··A··, ·B·B·, C···C].
+* Then, we clone it to vec alp and pop the last value, vec alp = [··A··, ·B·B·].
+* After that, we will push the last value of vec alp to vec alphabet, until vec alp is empty.
+* Last, we will return vec alphabet who contains the diamond value = [··A··, ·B·B·, C···C, ·B·B·, ··A··].
 
 Now, the problem is solved and the code will surely pass without error. 😀
 
@@ -188,7 +195,7 @@ pub fn get_diamond(c: char) -> Vec<String> {
 }
 ```
 
-* And, when I review this and see *Why not add the trailing spaces directly?*, I get curious and try to find it again, then somehow found it. This a little simpler and just have 2 iteration i guess.
+* And, when I review this and see *Why not add the trailing spaces directly?*, I get curious and try to find it again, then somehow found it. This a little simpler and just have 2 iteration I guess.
 
 ```rust
 pub fn get_diamond(c: char) -> Vec<String> {
